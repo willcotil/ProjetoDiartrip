@@ -100,7 +100,6 @@ git clone https://github.com/IgorGustavoZ/ProjetoDiartrip
 
 ### 2. Acesse a pasta
 ```
-=======
 cd ProjetoDiatrip-main
 ```
 
