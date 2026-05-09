@@ -95,12 +95,12 @@ Authorization: Bearer SEU_TOKEN
 
 ### 1. Clone o repositório
 ```
-git clone https://github.com/gabrieljurgensen-dev/fastApi-tcc.git
+git clone https://github.com/IgorGustavoZ/ProjetoDiartrip
 ```
 
 ### 2. Acesse a pasta
 ```
-cd fastApi-tcc
+cd ProjetoDiatrip-main
 ```
 
 ### 3. Crie o ambiente virtual
