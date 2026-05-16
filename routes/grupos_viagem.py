@@ -8,6 +8,11 @@ router = APIRouter()
 class GrupoInput(BaseModel):
     nome_grupo: str
     destino_principal: str
+    data_inicio: str
+    data_fim: str
+    orcamento: str
+    tipo_viagem: str
+    preferencias: str
 
 @router.get("/grupos")
 def listar_grupos(usuario_id: int = Depends(get_usuario_logado)):
@@ -89,10 +94,28 @@ def criar_grupo(dados: GrupoInput, usuario_id: int = Depends(get_usuario_logado)
     with get_db() as conexao:
         cursor = conexao.cursor()
 
-        cursor.execute(
-            "INSERT INTO grupos_viagem(nome_grupo, destino_principal, criado_por) VALUES (%s, %s, %s)",
-            (dados.nome_grupo, dados.destino_principal, usuario_id)
-        )
+        cursor.execute("""
+    INSERT INTO grupos_viagem(
+        nome_grupo,
+        destino_principal,
+        data_inicio,
+        data_fim,
+        orcamento,
+        tipo_viagem,
+        preferencias,
+        criado_por
+    )
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+""", (
+    dados.nome_grupo,
+    dados.destino_principal,
+    dados.data_inicio,
+    dados.data_fim,
+    dados.orcamento,
+    dados.tipo_viagem,
+    dados.preferencias,
+    usuario_id
+))
 
         id_grupo = cursor.lastrowid
 

@@ -524,3 +524,33 @@ option{
     cursor: pointer;
     margin-bottom: 5px;
 }
+
+.ia-formatada {
+    margin-top: 8px;
+    line-height: 1.6;
+}
+
+.ia-formatada h1,
+.ia-formatada h2,
+.ia-formatada h3 {
+    margin-top: 12px;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.ia-formatada ul {
+    padding-left: 20px;
+    margin-top: 8px;
+}
+
+.ia-formatada li {
+    margin-bottom: 6px;
+}
+
+.ia-formatada p {
+    margin-bottom: 10px;
+}
+
+.ia-formatada strong {
+    color: #ffd166;
+}

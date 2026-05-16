@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 import os
-from routes import usuarios, login, grupos_viagem, roteiros, grupos_membros, gastos
+from routes import usuarios, login, grupos_viagem, roteiros, grupos_membros, gastos, chat_ia
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -20,6 +20,7 @@ app.include_router(grupos_viagem.router)
 app.include_router(roteiros.router)
 app.include_router(grupos_membros.router)
 app.include_router(gastos.router)
+app.include_router(chat_ia.router)
 
 UPLOAD_DIR = "uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
