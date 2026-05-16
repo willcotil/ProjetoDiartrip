@@ -10,10 +10,30 @@ API REST feita em Python usando FastAPI para gerenciamento de viagens em grupo.
 - bcrypt
 - JWT (autenticação)
 - Upload de arquivos (imagens)
+- Integração com IA via OpenRouter
 
 ---
 
 ## Funcionalidades
+
+## Integração com IA
+
+O sistema possui um assistente virtual integrado usando OpenRouter.
+
+A IA consegue:
+- sugerir roteiros
+- recomendar restaurantes
+- indicar pontos turísticos
+- responder dúvidas sobre a viagem
+- manter contexto da conversa
+- considerar orçamento e preferências do usuário
+
+A resposta é contextualizada usando:
+- destino da viagem
+- datas
+- tipo de viagem
+- preferências
+- histórico recente do chat
 
 ### Autenticação
 - Login com JWT
@@ -26,12 +46,13 @@ API REST feita em Python usando FastAPI para gerenciamento de viagens em grupo.
 - Deletar próprio usuário
 
 ### Grupos de viagem
+- ### Grupos de viagem
 - Criar grupo (usuário vira admin automaticamente)
-- Listar apenas grupos do usuário
-- Buscar grupo por ID (com permissão)
-- Buscar grupos por nome (filtrado por usuário)
-- Atualizar grupo (apenas admin)
-- Deletar grupo (apenas admin)
+- Destino principal
+- Data de início e fim
+- Tipo de viagem
+- Preferências do usuário
+- Orçamento da viagem
 
 ### Membros do grupo
 - Listar membros
@@ -61,10 +82,13 @@ API REST feita em Python usando FastAPI para gerenciamento de viagens em grupo.
 - Servir arquivos estáticos via `/uploads`
 
 ### Chat IA
-- Salvar interações (pergunta/resposta)
-- Listar histórico do usuário
-- Suporte opcional a grupo
-
+- Integração com OpenRouter
+- Assistente contextualizado por viagem
+- Histórico de conversas
+- Sugestões de roteiro
+- Recomendações de turismo
+- Respostas formatadas em Markdown
+- Contexto automático da viagem selecionada
 ---
 
 ## Autenticação
@@ -123,6 +147,7 @@ pip install -r requirements.txt
 ```
 SECRET_KEY=sua_chave_secreta
 ALGORITHM=HS256
+OPENROUTER_API_KEY=sua_api_key
 ```
 
 ### 7. Execute
